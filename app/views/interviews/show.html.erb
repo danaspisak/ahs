@@ -5,6 +5,10 @@
   <%= @interview.id %>
   <% @interview.responses.each do |r| %>
     <%= r.question.content %>
-    <%= r.selection %>
+    <% if r.question.response_type.eql? "SelectionResponse" %>
+      <%= r.selection %>
+    <% elsif r.question.response_type.eql? "TextResponse" %>
+      <%= r.content %>
+    <% end %>
   <% end %>
 </p>
