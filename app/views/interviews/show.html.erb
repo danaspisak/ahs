@@ -4,7 +4,7 @@
   <strong>ID:</strong>
   <%= @interview.id %>
   <% @interview.responses.each do |r| %>
-    <%= r.question.content %>
+    <%= simple_format(r.question.content) %>
     <% if r.question.response_type.eql? "SelectionResponse" %>
       <%= r.selection %>
     <% elsif r.question.response_type.eql? "TextResponse" %>

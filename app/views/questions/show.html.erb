@@ -6,7 +6,7 @@
   <strong>Suborder</strong>
   <%= @question.suborder %>
   <strong>Content:</strong>
-  <%= @question.content %>
+  <%= simple_format(@question.content) %>
   <strong>Response Type:</strong>
   <%= @question.response_type %>
 </p>

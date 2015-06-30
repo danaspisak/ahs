@@ -13,9 +13,10 @@
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td><%= question.content %></td>
+        <td><%= question.order %>:<%= question.suborder%></td>
+        <td><%= simple_format(question.content) %></td>
         <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>        
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
       </tr>
     <% end %>
   </tbody>
