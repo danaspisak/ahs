@@ -1,0 +1,22 @@
+
+<%= @survey.name %>
+
+Questions count: <%= @questions.count %>
+<% @questions.each do |question| %>
+  <%= question.content %>
+<% end %>
+
+<%= simple_form_for @interview do |i| %>
+  <div class="form-inputs">
+  <% @questions.each do |q| %>
+    <%= q.content %>
+    <%= i.simple_fields_for :responses do |r| %>
+      <%= r.input :question_id, as: :hidden, input_html: { value: q.id } %>
+      <%= r.input :selection %>
+    <% end %>
+  <% end %>
+  </div>
+  <div class="form-actions">
+    <%= i.button :submit %>
+  </div>
+<% end %>

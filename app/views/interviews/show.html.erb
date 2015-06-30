@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @interview.id %>
+  <% @interview.responses.each do |r| %>
+    <%= r.question.content %>
+    <%= r.selection %>
+  <% end %>
+</p>
