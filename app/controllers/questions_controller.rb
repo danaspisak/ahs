@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:show]
+  before_action :set_question, only: [:show, :edit, :update]
 
   def new
     @question = Question.new
@@ -27,6 +27,19 @@ class QuestionsController < ApplicationController
       end
     end
   end
+
+  def update
+    @surveys = Survey.all
+    @response_types = Response.subclasses.map{|x| x.name}
+    respond_to do |format|
+      if @question.update(question_params)
+        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
