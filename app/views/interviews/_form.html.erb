@@ -4,13 +4,26 @@
   <div class="form-inputs">
   <% @questions.each do |q| %>
     Question <%= q.order %>.<%= q.suborder %> :
-    <%= q.content %>
+    <%= simple_format(q.content) %>
     <%= i.simple_fields_for :responses do |r| %>
       <%= r.input :question_id, as: :hidden, input_html: { value: q.id } %>
       <% if q.response_type.eql? "SelectionResponse" %>
         <%= r.input :selection %>
       <% elsif q.response_type.eql? "TextResponse" %>
         <%= r.input :content %>
+      <% elsif q.response_type.eql? "FollupTruthResponse" %>
+        <%= r.input :content %>
+        [if yes]
+        <%= r.input :followup_truth %>
+      <% elsif q.response_type.eql? "FollowupNumberResponse" %>
+        <%= r.input :content %>
+        How many? <%= r.input :followup_number %>
+      <% elsif q.response_type.eql? "PrivateTextResponse" %>
+        <%= r.input :content %>
+      <% elsif q.response_type.eql? "FollowupTruthTextResponse" %>
+          <%= r.input :content %>
+          <%= r.input :followup_truth %>
+          <%= r.input :followup_text %>
       <% end %>
     <% end %>
   <% end %>

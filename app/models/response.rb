@@ -11,3 +11,11 @@ class TextResponse < Response ;
 end
 class SelectionResponse < Response ;
 end
+class FollupTruthResponse < Response ;
+end
+class FollowupTruthTextReponse < Response ;
+end
+class FollowupNumberResponse < Response ;
+end
+class PrivateTextResponse < Response ;
+end
