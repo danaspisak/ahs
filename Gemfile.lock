@@ -44,6 +44,9 @@ GEM
     autoprefixer-rails (5.2.1)
       execjs
       json
+    autotab-rails (0.0.4)
+      rails (>= 3.0)
+      railties (>= 3.0)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -223,6 +226,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    seed_dump (3.2.2)
+      activerecord (~> 4)
+      activesupport (~> 4)
     selenium-webdriver (2.46.2)
       childprocess (~> 0.5)
       multi_json (~> 1.0)
@@ -276,6 +282,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autotab-rails
   better_errors
   bootstrap-sass
   byebug
@@ -300,6 +307,7 @@ DEPENDENCIES
   rspec-rails
   rubocop
   sass-rails (~> 5.0)
+  seed_dump
   selenium-webdriver
   simple_form
   spring

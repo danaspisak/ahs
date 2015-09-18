@@ -1,9 +1,83 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
+Interview.create!([
+  {name: nil, contact_id: nil, interview_time: nil, interview_date: nil, zone: nil, user_id: nil, survey_id: nil}
+])
+Question.create!([
+  {survey_id: 1, order: 1, suborder: 1, content: "How long have you lived in Africatown?\r\nLess than 1 Year (1)\t2-5 Years (2)\t5-10 Years (3)\t10+ Years (4)\tSkipped (5)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 2, suborder: 1, content: "How would you rate the air quality in Africatown?\r\nVery Safe (1)\tSafe (2)\t\tUnsafe (3)\tVery Unsafe (4)\t\tSkipped (5)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 1, content: "Do any of these specific sources of pollution concern you?\r\nPlains All American’s Magazine Point petrochemical tank farm \r\n\u2028\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 2, content: "Kimberly Clark’s paper mill\u2028\r\n\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 3, content: "Berg Pipe’s metal services\r\n\u2028\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 4, content: "18 wheeler trucks & traffic through the community\r\n\u2028\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 5, content: "Metals USA’s metal services\u2028\t\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 6, content: "Kemira Water Solutions’ plastics chemical refinery\u2028\r\n\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 7, content: "OxyChem’s chemical refinery\r\n\u2028\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 8, content: "Honeywell UOP’s chemical refinery\u2028\r\n\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 9, content: "ARC Logistics Partners' petrochemical rail terminal and tank farm\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 10, content: "Southern Ionics’s chemical refinery\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 11, content: "Multisorb Technologies’ desiccant manufacturing plant\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 12, content: "Rail Traffic through the community\u2028\r\n\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 13, content: "International Paper and Scott Paper’s histories of pollution\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 14, content: "LS Power’s natural Gas-fired power plant\r\n\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 15, content: "Scotch Gulf Lumber's timber mill\r\n\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 16, content: "Hosea O Weaver & Sons Incorporated's asphalt storage and manufacturing\r\n\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 17, content: "Coal Dust from the Alabama State Docks\r\n\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 18, content: "Three Mile Creek Sewage Treatment Plant \r\n\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 19, content: "Nustar Energy's petrochemical storage tank farm\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 3, suborder: 20, content: "[Any other source they mention that we haven't listed]:\r\n\t\t\t\t\t\t_________________________________ (1)", response_type: "TextResponse"},
+  {survey_id: 1, order: 4, suborder: 1, content: "Did you know that air pollution is linked to diseases like asthma, cancer, and heart disease?\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 5, suborder: 1, content: "Do you think any of these methods would help reduce pollution impacts on community health? \r\nStricter enforcement of air pollution regulations on industrial facilities\r\n\u2028\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 5, suborder: 2, content: "Lawsuits against industrial facilitates\r\n \u2028\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 5, suborder: 3, content: "Restricting truck and train traffic through your neighborhood\r\n \u2028\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 5, suborder: 4, content: "[Any other method they mention that we haven't listed]:\r\n ___________________ (1)\u2028", response_type: "TextResponse"},
+  {survey_id: 1, order: 6, suborder: 1, content: "Have you heard about the expansion of toxic petrochemical transport pipelines and above ground storage tank facilities in and around Africatown?\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 7, suborder: 1, content: "Did you know this expanded toxic petrochemical infrastructure would bring significantly larger amounts of Alberta tar sands and Bakken shale oil from Canada to be shipped through Africatown to Chevron’s Pascagoula refinery?\r\n\t\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 8, suborder: 1, content: "Have you ever expressed your concerns about pollution to any of the following? \r\nA. Refinery & Chemical Plants \r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)\r\n(5) [If yes] - Did you receive a response? ______(Y/N)\r\n", response_type: "FollupTruthResponse"},
+  {survey_id: 1, order: 8, suborder: 2, content: " Environmental Organizations\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)\r\n(5) [If yes] - Did you receive a response? ______(Y/N)\r\n", response_type: "FollupTruthResponse"},
+  {survey_id: 1, order: 8, suborder: 3, content: "Health Organizations\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)\r\n(5) [If yes] - Did you receive a response? ______(Y/N)\r\n", response_type: "FollupTruthResponse"},
+  {survey_id: 1, order: 8, suborder: 4, content: "The Alabama State Port Authority\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)\r\n(5) [If yes] - Did you receive a response? ______(Y/N)\r\n", response_type: "FollupTruthResponse"},
+  {survey_id: 1, order: 8, suborder: 5, content: "Elected Officials or Government Representatives\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)\r\n(5) [If yes] - Did you receive a response? ______(Y/N)\r\n", response_type: "FollupTruthResponse"},
+  {survey_id: 1, order: 8, suborder: 6, content: "Another person or group: ___________________ (6)\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)\r\n(5) [If yes] - Did you receive a response? ______(Y/N)\r\n", response_type: "FollowupTruthTextResponse"},
+  {survey_id: 1, order: 9, suborder: 1, content: "Are you concerned about the links between pollution and your health?\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)\r\n", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 10, suborder: 1, content: "How would you rate your overall health over the past year?\r\n\tHealthy (1) \tFair (2)\t\tUnhealthy (3) \tUnsure (4) \tSkipped (5)\r\n", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 11, suborder: 1, content: "How would you rate the overall health of your children over the past year?\r\n\u2028\tHealthy (1) \tFair (2)\t\tUnhealthy (3) \tUnsure (4) \tSkipped (5)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 12, suborder: 1, content: "Have you ever suffered from or been diagnosed with a respiratory disease?\r\n\u2028\t\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 12, suborder: 2, content: "What about other adults in your household? \r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4) [If yes] - How many? ____ (5)", response_type: "FollowupNumberResponse"},
+  {survey_id: 1, order: 12, suborder: 3, content: "What about children in your household? \r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4) [If yes] - How many? ____ (5)\r\n", response_type: "FollowupNumberResponse"},
+  {survey_id: 1, order: 13, suborder: 1, content: "Have you ever suffered from or been diagnosed with cancer?\r\n\u2028\t\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 13, suborder: 2, content: "hat about other adults in your household? \r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4) [If yes] - How many? ____ (5)\r\n", response_type: "FollowupNumberResponse"},
+  {survey_id: 1, order: 13, suborder: 3, content: "What about children in your household? \r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4) [If yes] - How many? ____ (5)", response_type: "FollowupNumberResponse"},
+  {survey_id: 1, order: 14, suborder: 1, content: "Have you ever suffered from or been diagnosed with diabetes?\u2028\r\n\t\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)\r\n", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 14, suborder: 2, content: "What about other adults in your household? \r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4) [If yes] - How many? ____ (5)", response_type: "FollowupNumberResponse"},
+  {survey_id: 1, order: 14, suborder: 3, content: "What about children in your household? \r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4) [If yes] - How many? ____ (5)\r\n", response_type: "FollowupNumberResponse"},
+  {survey_id: 1, order: 15, suborder: 1, content: "Have you ever suffered from or been diagnosed with high blood pressure?\r\n\u2028\t\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)\r\n", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 15, suborder: 2, content: "What about other adults in your household? \r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4) [If yes] - How many? ____ (5)\r\n", response_type: "FollowupNumberResponse"},
+  {survey_id: 1, order: 15, suborder: 3, content: "What about children in your household? \r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4) [If yes] - How many? ____ (5)\u2028", response_type: "FollowupNumberResponse"},
+  {survey_id: 1, order: 16, suborder: 1, content: "Have you ever suffered from or been diagnosed with chronic headaches?\u2028\r\n\t\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)\r\n", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 16, suborder: 2, content: "What about other adults in your household? \r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4) [If yes] - How many? ____ (5)\r\n", response_type: "FollowupNumberResponse"},
+  {survey_id: 1, order: 16, suborder: 3, content: "What about children in your household? \r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4) [If yes] - How many? ____ (5)\r\n", response_type: "FollowupNumberResponse"},
+  {survey_id: 1, order: 17, suborder: 1, content: "Have you ever suffered from or been diagnosed with chronic skin problems like eczema, acne, psoriasis, or rosacea?\u2028\r\n\t\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 17, suborder: 2, content: "What about other adults in your household? \r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4) [If yes] - How many? ____ (5)", response_type: "FollowupNumberResponse"},
+  {survey_id: 1, order: 17, suborder: 3, content: "What about children in your household? \r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4) [If yes] - How many? ____ (5)", response_type: "FollowupNumberResponse"},
+  {survey_id: 1, order: 18, suborder: 1, content: "When was the last time you had a routine physical exam or general checkup by a doctor or health professional? \r\nWithin 2 years (1) More than 2 years (2) Unsure (3) Skipped (4) Never (5)\r\n", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 19, suborder: 1, content: "When was the last time your children had a routine physical exam or general checkup by a doctor or health professional? \r\nWithin 2 years (1) More than 2 years (2) Unsure (3) Skipped (4) Never (5)\r\n", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 20, suborder: 1, content: "Do you have a doctor or clinic you go to when you are sick or you need advice about your health?\r\n\t\tYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)\u2028", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 21, suborder: 1, content: "Do you currently have some form of healthcare coverage?\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)\r\n", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 22, suborder: 1, content: "Would a Community Health Fair, where doctors and nurses give free general checkups, be something that would interest you?\r\nYes (1)\t\tNo (2)\t\tUnsure (3)\tSkipped (4)\r\n", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 23, suborder: 1, content: "What is your Date of Birth: ______________________ Skipped (NO)", response_type: "TextResponse"},
+  {survey_id: 1, order: 24, suborder: 1, content: "Do you Rent or Own?  \tRent (1) \tOwn (2)\t\tSkipped (3)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 25, suborder: 1, content: "What is your Gender? \tMale (1) Female (2) Other _________ (3) Skipped (4)\r\n", response_type: "TextResponse"},
+  {survey_id: 1, order: 26, suborder: 1, content: "Can we contact you occasionally about upcoming events? \r\nYes (1)\t\tNo (2)\t\tNot Sure (3)  \t\tSkipped (5)\r\n", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 27, suborder: 1, content: "What is the best way to reach you?\r\nCall (1)\t\tText (2)\t\tEmail (3)\tIn-person (4) \tSkipped (5)", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 28, suborder: 1, content: "Are you interested in attending community organizing meetings, where members decide our priorities and learn about opportunities to help the community?\r\nYes (1)\t\tNo (2)\t\tNot Sure (3) \tSkipped (4)\r\n", response_type: "SelectionResponse"},
+  {survey_id: 1, order: 29, suborder: 1, content: "Name:", response_type: "PrivateTextResponse"},
+  {survey_id: 1, order: 30, suborder: 1, content: "Address:", response_type: "PrivateTextResponse"},
+  {survey_id: 1, order: 31, suborder: 1, content: "Email:", response_type: "PrivateTextResponse"},
+  {survey_id: 1, order: 32, suborder: 1, content: "Phone number:", response_type: "PrivateTextResponse"},
+  {survey_id: 1, order: 33, suborder: 1, content: "Cell Number:", response_type: "PrivateTextResponse"}
+])
+Response.create!([
+  {contact_id: nil, question_id: 1, selection: 1, followup_truth: nil, followup_number: nil, followup_text: nil, content: nil, type: nil, interview_id: 1}
+])
+Survey.create!([
+  {name: "AH Survey"}
+])

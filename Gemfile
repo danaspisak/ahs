@@ -15,7 +15,9 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'devise_invitable'
 gem 'simple_form'
+gem 'autotab-rails'
 gem 'upmin-admin'
+gem 'seed_dump'
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil
