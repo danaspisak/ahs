@@ -8,7 +8,7 @@
     <%= i.simple_fields_for :responses do |r| %>
       <%= r.input :question_id, as: :hidden, input_html: { value: q.id } %>
       <% if q.response_type.eql? "SelectionResponse" %>
-        <%= r.input :selection %>
+        <%= r.input :selection, input_html: { class: 'answer'} %>
       <% elsif q.response_type.eql? "TextResponse" %>
         <%= r.input :content %>
       <% elsif q.response_type.eql? "FollupTruthResponse" %>
