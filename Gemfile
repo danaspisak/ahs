@@ -6,6 +6,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
+gem 'pg'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -32,10 +33,8 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'rspec-rails'
   gem 'rubocop'
-  gem 'pg'
 end
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
   gem 'unicorn'
 end
